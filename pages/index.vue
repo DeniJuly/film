@@ -90,6 +90,14 @@
         </carousel>
       </div>
     </div>
+    <div class="fixed-bottom download-app" v-if="download">
+      <a href="/apk/film-v1.apk" download class="text text-center">
+        <p class="pm m-0 text-white">Download Aplikasi</p>
+      </a>
+      <button class="btn" @click="closeDownload()">
+        <img src="/close.svg" alt="">
+      </button>
+    </div>
   </div>
 </template>
 
@@ -101,6 +109,8 @@ import CardFilm from '../components/CardFilm'
 import TabMenu from '../components/TabMenu'
 import Carousel from 'vue-owl-carousel'
 import MainNavbar from '../components/MainNavbar'
+
+import { mapGetters } from 'vuex'
 
 export default {
   head(){
@@ -156,6 +166,9 @@ export default {
           return this.genre[i].name
         }
       }
+    },
+    closeDownload(){
+      this.$store.dispatch('changeDownload', false)
     }
   },
   created(){
@@ -179,7 +192,7 @@ export default {
     Carousel,
     CardFilm,
     TabMenu
-  }
+  },
 }
 </script>
 
@@ -250,4 +263,30 @@ export default {
       width: 130px;
     }
   }
+  /* download aplikasi */
+  .download-app {
+    margin: auto;
+    width: 300px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    border-radius: 20px;
+    align-items: center;
+    background: #f19292;
+    margin-bottom: 20px;
+    height: 35px;
+    overflow: hidden;
+  }
+  .download-app .text {
+    height: 100%;
+    align-items: center;
+    display: flex;
+    justify-content: center;
+    width: 260px;
+  }
+  .download-app button.btn {
+    border-left-width: 1.5px;
+    border-left-color: #fff;
+    border-radius: 0;
+  } 
 </style>

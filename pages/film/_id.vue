@@ -26,7 +26,7 @@
       <div class="detail-film d-flex mb-4 mt-4">
         <div class="item border-right">
           <p class="header m-0">Durasi</p>
-          <h5 class="m-0 isi pm">film.runtime</h5>
+          <h5 class="m-0 isi pm">{{film.runtime}} MENIT</h5>
         </div>
         <div class="item border-right">
           <p class="header m-0">Bahasa</p>
@@ -164,11 +164,12 @@ export default {
 
 <style scoped>
   .header a {
-    background: #ffffffb8;
+    background: rgba(255,255,255,0.72157);
     border-radius: 100%;
     padding: 8px;
     width: 40px;
     height: 40px;
+    padding-top: 7px;
   }
   .backdrop {
     background-size: cover!important;
