@@ -1,5 +1,9 @@
 
 export default {
+  server: {
+    host: '192.168.43.92',
+    port: '3000'
+  },
   /*
   ** Nuxt rendering mode
   ** See https://nuxtjs.org/api/configuration-mode
@@ -59,7 +63,9 @@ export default {
   ** Axios module configuration
   ** See https://axios.nuxtjs.org/options
   */
-  axios: {},
+  axios: {
+    baseURL: 'https://api.themoviedb.org/3'
+  },
   /*
   ** Build configuration
   ** See https://nuxtjs.org/api/configuration-build/
